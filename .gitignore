@@ -1,0 +1,26 @@
+# Ejecutables generados por el Makefile
+testLine
+fractalTree
+a.out
+
+# Archivos objeto
+*.o
+
+# Librerías compiladas
+*.so
+*.a
+
+# Carpetas de compilación
+build/
+bin/
+
+# Archivos temporales de Vim
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Archivos del sistema
+.DS_Store
