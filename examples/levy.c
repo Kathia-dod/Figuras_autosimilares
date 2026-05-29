@@ -1,4 +1,4 @@
-#include <math .h>
+#include <math.h>
 #include "../turtlec.h"
 
 void levy(Turtle *, float, int);
@@ -12,14 +12,14 @@ int main(void){
   Turtle *t = turtleAppGetTurtle(app);
 
   turtlePenUp(t);
-  turtleGoTo(t, 800.0f, 800.0f);
+  turtleGoTo(t, 800.0f, 600.0f);
   turtlePenDown(t);
+  
+  turtleLeft(t, 180.0);
 
-  turtleLeft(t, 90.0);
-
-  turtleSetColor(t, 61, 242, 192);
-  turtleSetSpeed(t, 5.0f);
-  levy(t, 200.0f, 1);
+  turtleSetColor(t, 209, 90, 205);
+  turtleSetSpeed(t, 5.0f);  
+  levy(t, 200.0f, 4);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
