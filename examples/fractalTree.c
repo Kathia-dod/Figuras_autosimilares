@@ -31,9 +31,9 @@ void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
   
   float t = (float)depth / depthOrig; 
   
-  int r = 54  + (230 - 54) * t;
-  int g = 109 + (255 - 109) * t;
-  int b = 54  + (176  - 54)  * t;
+  int r = 54  + (170 - 54) * t;
+  int g = 90 + (140 - 90) * t;
+  int b = 54  + (60  - 54)  * t;
   turtleSetColor(turtle, r, g, b);
 /*  
   if (depth > 9)
