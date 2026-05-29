@@ -1,6 +1,6 @@
 #include "../turtlec.h"
 
-void fractalTree(Turtle *, float, int);
+void fractalTree(Turtle *, float, int, int);
 
 int main(void){
   TurtleApp *app = turtleAppCreate(1600, 900, "Fractal Tree");
@@ -18,35 +18,40 @@ int main(void){
 
   turtleSetColor(t, 61, 242, 192);
   turtleSetSpeed(t, 5.0f);
-  fractalTree(t, 200.0f, 15);
+  fractalTree(t, 200.0f, 11, 11);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
   return 0;
 } 
 
-void fractalTree(Turtle *turtle, float length, int depth){
+void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
   if(depth == 0 || length < 5)
     return;
   
-  //int r =   
+  float t = (float)depth / depthOrig; 
   
-  if (depth > 7)
+  int r = 54  + (230 - 54) * t;
+  int g = 109 + (255 - 109) * t;
+  int b = 54  + (176  - 54)  * t;
+  turtleSetColor(turtle, r, g, b);
+/*  
+  if (depth > 9)
     turtleSetColor(turtle, 165, 105, 44);  
-  else if (depth > 5)
+  else if (depth > 8)
     turtleSetColor(turtle, 230, 196, 162);  
-  else if (depth > 3)
+  else if (depth > 5)
     turtleSetColor(turtle, 54, 109, 54);   
   else
     turtleSetColor(turtle, 176, 216, 176);     
-
+*/
   turtleForward(turtle, length);
 
   turtleLeft(turtle, 30.0);
-  fractalTree(turtle, length * 0.7, depth - 1);
+  fractalTree(turtle, length * 0.7, depth - 1, depthOrig);
 
   turtleRight(turtle, 60.0);
-  fractalTree(turtle, length * 0.7, depth - 1);
+  fractalTree(turtle, length * 0.7, depth - 1, depthOrig);
 
   turtleLeft(turtle, 30.0);
   
