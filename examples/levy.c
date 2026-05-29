@@ -1,0 +1,42 @@
+#include <math .h>
+#include "../turtlec.h"
+
+void levy(Turtle *, float, int);
+
+int main(void){
+  TurtleApp *app = turtleAppCreate(1600, 900, "Fractal Tree");
+
+  if(app == NULL)
+    return 1;
+
+  Turtle *t = turtleAppGetTurtle(app);
+
+  turtlePenUp(t);
+  turtleGoTo(t, 800.0f, 800.0f);
+  turtlePenDown(t);
+
+  turtleLeft(t, 90.0);
+
+  turtleSetColor(t, 61, 242, 192);
+  turtleSetSpeed(t, 5.0f);
+  levy(t, 200.0f, 1);
+
+  turtleAppRun(app);
+  turtleAppDestroy(app);
+  return 0;
+} 
+
+void levy(Turtle *turtle, float length, int depth) {
+  if (depth == 0) {
+    turtleForward(turtle, length);
+    return;
+  }
+
+  turtleLeft(turtle, 45);
+  levy(turtle, length / sqrt(2), depth - 1);
+
+  turtleRight(turtle, 90);
+  levy(turtle, length / sqrt(2), depth - 1);
+
+  turtleLeft(turtle, 45);
+}
