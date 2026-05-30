@@ -1,9 +1,12 @@
 #include "../turtlec.h"
 #include <time.h>
+#include <stdlib.h>
 
 void fractalTree(Turtle *, float, int, int);
 
 int main(void){
+  srand(time(NULL));
+  
   TurtleApp *app = turtleAppCreate(1600, 900, "Fractal Tree");
 
   if(app == NULL)
@@ -30,8 +33,7 @@ void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
   if(depth == 0 || length < 5)
     return;
     
-  srand(time(NULL));
-  float breach = 0.1f + ((float)rand() / RAND_MAX) * (0.8f);
+  float breach = -0.4f + ((float)rand() / RAND_MAX) * (0.6f);
   
   float t = (float)depth / depthOrig; 
   
