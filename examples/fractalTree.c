@@ -30,7 +30,7 @@ int main(void){
 } 
 
 void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
-  if(depth == 0 /*|| length < 5 */)
+  if(depth == 0 || length < 5 )
     return;
     
   float randLeft = -0.4f + ((float)rand() / RAND_MAX) * (0.5f);
@@ -38,10 +38,11 @@ void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
   
   float t = (float)depth / depthOrig; 
   
-  int r = 54  + (170 - 54) * t;
+  int r = 54 + (170 - 54) * t;
   int g = 90 + (140 - 90) * t;
-  int b = 54  + (60  - 54)  * t;
+  int b = 54 + (60  - 54) * t;
   turtleSetColor(turtle, r, g, b);
+  
 /*  
   if (depth > 9)
     turtleSetColor(turtle, 165, 105, 44);  
