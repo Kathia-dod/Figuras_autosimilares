@@ -18,7 +18,7 @@ int main(void){
   turtleLeft(t, 180.0);
 
   turtleSetColor(t, 209, 90, 205);
-  turtleSetSpeed(t, 400.0f);  
+  turtleSetSpeed(t, 5.0f);  
   levy(t, 400.0f, 18);
 
   turtleAppRun(app);

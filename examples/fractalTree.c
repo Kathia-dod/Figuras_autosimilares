@@ -1,4 +1,5 @@
 #include "../turtlec.h"
+#include <time.h>
 
 void fractalTree(Turtle *, float, int, int);
 
@@ -18,7 +19,7 @@ int main(void){
 
   turtleSetColor(t, 61, 242, 192);
   turtleSetSpeed(t, 5.0f);
-  fractalTree(t, 200.0f, 11, 11);
+  fractalTree(t, 200.0f, 10, 10);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
@@ -28,6 +29,9 @@ int main(void){
 void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
   if(depth == 0 || length < 5)
     return;
+    
+  srand(time(NULL));
+  float breach = 0.1f + ((float)rand() / RAND_MAX) * (0.8f);
   
   float t = (float)depth / depthOrig; 
   
@@ -45,13 +49,14 @@ void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
   else
     turtleSetColor(turtle, 176, 216, 176);     
 */
+
   turtleForward(turtle, length);
 
   turtleLeft(turtle, 30.0);
-  fractalTree(turtle, length * 0.7, depth - 1, depthOrig);
+  fractalTree(turtle, length * (0.7 + breach), depth - 1, depthOrig);
 
   turtleRight(turtle, 60.0);
-  fractalTree(turtle, length * 0.7, depth - 1, depthOrig);
+  fractalTree(turtle, length * (0.7 + breach), depth - 1, depthOrig);
 
   turtleLeft(turtle, 30.0);
   
