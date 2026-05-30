@@ -4,7 +4,7 @@
 void levy(Turtle *, float, int);
 
 int main(void){
-  TurtleApp *app = turtleAppCreate(1600, 900, "Fractal Tree");
+  TurtleApp *app = turtleAppCreate(1600, 900, "Levy C");
 
   if(app == NULL)
     return 1;
@@ -18,7 +18,7 @@ int main(void){
   turtleLeft(t, 180.0);
 
   turtleSetColor(t, 209, 90, 205);
-  turtleSetSpeed(t, 5.0f);  
+  turtleSetSpeed(t, 400.0f);  
   levy(t, 400.0f, 18);
 
   turtleAppRun(app);
