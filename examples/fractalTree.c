@@ -33,7 +33,8 @@ void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
   if(depth == 0 || length < 5)
     return;
     
-  float breach = -0.4f + ((float)rand() / RAND_MAX) * (0.6f);
+  float randLeft = -0.4f + ((float)rand() / RAND_MAX) * (0.6f);
+  float randRight = -0.4f + ((float)rand() / RAND_MAX) * (0.6f);
   
   float t = (float)depth / depthOrig; 
   
@@ -55,10 +56,10 @@ void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
   turtleForward(turtle, length);
 
   turtleLeft(turtle, 30.0);
-  fractalTree(turtle, length * (0.7 + breach), depth - 1, depthOrig);
+  fractalTree(turtle, length * (0.7 + randLeft), depth - 1, depthOrig);
 
   turtleRight(turtle, 60.0);
-  fractalTree(turtle, length * (0.7 + breach), depth - 1, depthOrig);
+  fractalTree(turtle, length * (0.7 + randRight), depth - 1, depthOrig);
 
   turtleLeft(turtle, 30.0);
   
