@@ -15,14 +15,14 @@ int main(void){
   Turtle *t = turtleAppGetTurtle(app);
 
   turtlePenUp(t);
-  turtleGoTo(t, 800.0f, 800.0f);
+  turtleGoTo(t, 800.0f, 875.0f);
   turtlePenDown(t);
 
   turtleLeft(t, 90.0);
 
   turtleSetColor(t, 61, 242, 192);
   turtleSetSpeed(t, 5.0f);
-  fractalTree(t, 200.0f, 10, 10);
+  fractalTree(t, 300.0f, 10, 10);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
@@ -33,8 +33,8 @@ void fractalTree(Turtle *turtle, float length, int depth, int depthOrig){
   if(depth == 0 || length < 5)
     return;
     
-  float randLeft = -0.4f + ((float)rand() / RAND_MAX) * (0.6f);
-  float randRight = -0.4f + ((float)rand() / RAND_MAX) * (0.6f);
+  float randLeft = -0.4f + ((float)rand() / RAND_MAX) * (0.5f);
+  float randRight = -0.4f + ((float)rand() / RAND_MAX) * (0.5f);
   
   float t = (float)depth / depthOrig; 
   
