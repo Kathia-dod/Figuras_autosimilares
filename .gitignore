@@ -1,6 +1,7 @@
 # Ejecutables generados por el Makefile
 testLine
 fractalTree
+levy
 a.out
 
 # Archivos objeto
